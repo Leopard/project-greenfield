@@ -28,7 +28,7 @@ describe("Reviews", () => {
   
     test("change page", async () => {
         await page.click('[id="findItem"]',{delay: 100});
-        await page.keyboard.type("7",{delay: 100});
+        await page.keyboard.type("6431",{delay: 100});
         await page.click('[form="findItem"]');
         const pageName = await page.$eval("[class=siteName]", el => el.textContent);
         expect(pageName).toEqual("BuyThisStuff.com");
@@ -40,7 +40,7 @@ describe("Reviews", () => {
 
     test("gives correct rating", async () => {
         const rating = await page.$eval("[class=review-average]", el => el.textContent);
-        expect(rating).toEqual("3.4");
+        expect(rating).toEqual("2.3");
 
         });
   
